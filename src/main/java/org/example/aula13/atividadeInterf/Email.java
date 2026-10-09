@@ -1,0 +1,9 @@
+package org.example.aula13.atividadeInterf;
+
+class Email implements Notificacao{
+
+    @Override
+    public void enviar(String mensagem){
+        System.out.println("Email enviado! " + mensagem);
+    }
+}
