@@ -5,4 +5,7 @@ public class Cachorro extends Pet{
     public void emitirSom() {
         System.out.println(nome + " fez: Au au!");
     }
+    public void buscarBolinha(){
+        System.out.println(nome + "buscou a bolinha!");
+    }
 }

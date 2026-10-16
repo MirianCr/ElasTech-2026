@@ -28,6 +28,7 @@ public class Petshop {
             System.out.println("5 - Entrar na fila de banho");
             System.out.println("6 - Atender próximo");
             System.out.println("7 - Executar serviços");
+            System.out.println("8 - Total de pets");
             System.out.println("0 - Sair");
             System.out.print("Escolha: ");
 
@@ -40,7 +41,7 @@ public class Petshop {
                     case 1:
 
                         if (total >= pets.length) {
-                            System.out.println("Limite de pets atingido.");
+                            System.out.println("Cadastro cheio!");
                             break;
                         }
 
@@ -53,6 +54,8 @@ public class Petshop {
                         String especie = sc.nextLine();
 
                         Pet pet;
+                        Cachorro c = new Cachorro();
+                        c.buscarBolinha();
 
                         if (especie.equalsIgnoreCase("Cachorro")) {
                             pet = new Cachorro();
@@ -94,6 +97,7 @@ public class Petshop {
                                                 pets[i].peso + " kg - Porte " +
                                                 pets[i].porte
                                 );
+                                pets[i].emitirSom();
                             }
                         }
                         break;
@@ -187,11 +191,15 @@ public class Petshop {
                         servicos.add(new Banho());
                         servicos.add(new Tosa());
                         servicos.add(new Consulta());
+                        servicos.add(new Vacina());
 
                         for (Servico servico : servicos) {
                             servico.executar(nomePet);
                         }
 
+                        break;
+                    case 8:
+                        System.out.println("Total de pets cadastrados: " + total);
                         break;
                     case 0:
                         System.out.println("Até logo!");
@@ -209,10 +217,6 @@ public class Petshop {
         }
 
         sc.close();
-
-
-
-
 
 
 
@@ -242,9 +246,6 @@ public class Petshop {
 
 
 
-
-
-
         //String nome;
         //String especie = "cachorro";
         //Double peso = 8.5;
@@ -260,14 +261,22 @@ public class Petshop {
 //        System.out.println("Digite o peso: ");
 //        double peso= sc.nextDouble();
 
-
-
-
-
-
-
        // System.out.println("Nome: " + nome);
        // System.out.println("Espécie:" + especie);
        // System.out.printf("Peso: %.1f kg", peso);
+
+    }//fim do main
+    //- um metodo que recebe só o pet e mostra apenas o nome
+    static void mostrarFicha(Pet pet) {
+        System.out.println("Nome: " + pet.nome);
     }
-}
+    //- um metodo que recebe o pet e um título, e mostra o título seguido da ficha completa
+    static void mostrarFicha(Pet pet, String titulo) {
+        System.out.println(titulo);
+        System.out.println("Nome: " + pet.nome);
+        System.out.println("Espécie: " + pet.especie);
+        System.out.println("Peso: " + pet.peso + " kg");
+        System.out.println("Porte: " + pet.porte);
+    }
+
+}//fim da classe
