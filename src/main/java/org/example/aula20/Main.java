@@ -9,9 +9,9 @@ public class Main {
         //int opcao =1;
         System.out.println("Quyal o banco deseja utilizar? Digite 1-mysql 2 MongoDB");
         int opcao = sc.nextInt();
-
-        BancoDeDados banco = BancoDeDadosFactory.criar(opcao);
-        banco.proibidoBarulho();
+//
+//        BancoDeDados banco = BancoDeDadosFactory.criar(opcao);
+//        banco.proibidoBarulho();
 
 //        MySql mySql = new MySql();
 //        mySql.proibidoBarulho();
