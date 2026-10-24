@@ -41,7 +41,6 @@ public class AtividadeBuilder {
 
 
 //   public class Agendamento {
-//
 //       private String nomePet;
 //       private String servico;
 //       private String horario;
